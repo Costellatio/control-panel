@@ -1,0 +1,30 @@
+{
+  "name": "control-panel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "next dev"
+  },
+  "author": "Stoyan Grozdanov <stoyan.konstantinov.grozdanov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.9.1",
+    "@react-three/fiber": "^8.2.0",
+    "next": "^12.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io-client": "^4.5.1",
+    "three": "^0.142.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "@types/react": "^18.0.15",
+    "@types/three": "^0.141.0",
+    "typescript": "^4.7.4"
+  }
+}
