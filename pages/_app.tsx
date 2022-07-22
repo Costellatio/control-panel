@@ -1,16 +1,16 @@
-import { CssBaseline } from '@mui/material';
-import Background from '../components/Background';
-import GlobalStyles from '../components/GlobalStyles';
+import { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import './Global.css';
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <>
-      <CssBaseline />
-      <GlobalStyles />
-      <Background />
-
-      <Component {...pageProps} />
-    </>
+    (!isMounted || typeof window === 'undefined') ? null : <Component {...pageProps} />
   );
 }
 
