@@ -14,10 +14,10 @@ function Root() {
           <CssBaseline />
           <Background />
 
-            <Routes>
-              <Route path="/" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
-              <Route path="/login" element={<Login />} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
         </AuthProvider>
       </Router>
     </ThemeProvider>
