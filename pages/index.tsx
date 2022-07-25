@@ -9,14 +9,20 @@ import { AuthProvider, defaultTheme } from "../lib";
 function Root() {
   return (
     <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <Background />
+
       <Router>
         <AuthProvider>
-          <CssBaseline />
-          <Background />
-
           <Routes>
-            <Route path="/" element={<ProtectedRoute><Panel /></ProtectedRoute>} />
-            <Route path="/login" element={<Login />} />
+            <Route
+              path="/"
+              element={<ProtectedRoute><Panel /></ProtectedRoute>}
+            />
+            <Route
+              path="/login"
+              element={<Login />}
+            />
           </Routes>
         </AuthProvider>
       </Router>
