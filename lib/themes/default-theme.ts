@@ -1,9 +1,10 @@
 import { createTheme } from "@mui/material";
 import { grey, red } from "@mui/material/colors";
 
-const white = '#ffffff';
+const alpha = (color: string, alphaValue: string) => color + alphaValue;
+const darker = (color: string) => alpha(color, '55');
 
-const alphaColor = (color: string, alphaAmount: string) => color + alphaAmount;
+const white = '#ffffff';
 
 const defaultTheme = createTheme({
   palette: {
@@ -12,17 +13,46 @@ const defaultTheme = createTheme({
     },
     error: {
       main: red[500],
+    },
+    text: {
+      primary: white,
     }
   },
   components: {
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          width: 120,
+          height: 50,
+          margin: 5,
+          padding: 10,
+        },
+        switchBase: {
+          margin: 6,
+          padding: 0,
+          '&.Mui-checked': {
+            color: '#fff',
+            transform: 'translateX(62.5px)',
+          },
+        },
+        thumb: {
+          width: 40,
+          height: 40,
+        },
+        track: {
+          borderRadius: 20,
+          backgroundColor: darker(white),
+        },
+      },
+    },
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          backgroundColor: alphaColor(white, '55'),
+          backgroundColor: darker(white),
           "&:hover": {
-            backgroundColor: alphaColor(grey[300], '55'),
+            backgroundColor: darker(grey[300]),
           },
-          '&.Mui-focused': {
+          '& .Mui-focused': {
             color: white,
           },
         },

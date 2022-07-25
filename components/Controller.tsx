@@ -35,10 +35,22 @@ const Controller = () => {
   }, []);
 
   return (
-    <FormGroup>
+    <FormGroup
+      sx={{
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <FormControlLabel
-        name="station-state"
-        control={<Switch checked={relays.stationState} onChange={onSwitchChange} />}
+        name="stationState"
+        control={
+          <Switch
+            checked={relays.stationState}
+            onChange={onSwitchChange}
+          />
+        }
         label={`Station State (${relays.stationState ? 'Open' : 'Closed'})`}
       />
     </FormGroup>
